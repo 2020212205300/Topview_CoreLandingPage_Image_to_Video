@@ -3,9 +3,6 @@ import {
   Users, Pencil, Megaphone, Store, Gem, Briefcase, Ruler, Rocket, Play, ChevronRight,
   Video, Monitor, ShoppingBag, Globe, Palette, Target
 } from "lucide-react";
-import { motion } from "framer-motion";
-
-const MotionBox = motion(Box);
 
 const professionalGroups = [
   { name: "Video Editors", icon: Pencil, color: "brand.500" },
@@ -23,13 +20,8 @@ const AgentCapabilities = () => {
     <Box as="section" py={{ base: 12, md: 24 }} px="6" bg="black" position="relative" overflow="hidden">
       <Container maxW="container.xl">
         <Box textAlign="center" mb="16">
-          <MotionBox
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <Heading as="h2" size="2xl" fontWeight="black" color="white" mb={6}>
+          <Box>
+            <Heading as="h2" size={{ base: "2xl", md: "4xl" }} fontWeight="black" color="white" mb={6}>
               Built for Professionals <br />
               <Text as="span" bgGradient="linear(to-r, #FF6B6B, brand.500, #4ECDC4)" bgClip="text">
                 Who Need Results
@@ -38,17 +30,13 @@ const AgentCapabilities = () => {
             <Text fontSize="lg" color="gray.400" maxW="2xl" mx="auto">
               Topview is trusted by teams and creators who need speed, scale, and performance.
             </Text>
-          </MotionBox>
+          </Box>
         </Box>
 
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={4}>
           {professionalGroups.map((group, index) => (
-            <MotionBox
+            <Box
               key={index}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
               p={5}
               borderRadius="xl"
               bg="whiteAlpha.50"
@@ -59,6 +47,7 @@ const AgentCapabilities = () => {
                 bg: "whiteAlpha.100",
                 transform: "translateY(-2px)"
               }}
+              transition="all 0.3s"
             >
               <HStack spacing={4}>
                 <Flex 
@@ -76,7 +65,7 @@ const AgentCapabilities = () => {
                   {group.name}
                 </Heading>
               </HStack>
-            </MotionBox>
+            </Box>
           ))}
         </SimpleGrid>
       </Container>

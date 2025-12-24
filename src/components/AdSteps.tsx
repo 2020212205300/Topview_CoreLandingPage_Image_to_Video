@@ -1,8 +1,5 @@
 import { Box, Container, Heading, Text, SimpleGrid, Icon, VStack, Badge, Stack } from "@chakra-ui/react";
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
-
-const MotionBox = motion(Box);
 
 const AdSteps = () => {
   const scenarios = [
@@ -56,13 +53,8 @@ const AdSteps = () => {
         <VStack spacing={16} align="stretch">
           {/* Header Section */}
           <Box textAlign="center" maxW="3xl" mx="auto">
-            <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <Heading as="h2" size="2xl" fontWeight="black" mb="6" color="white" lineHeight="1.1">
+            <Box>
+              <Heading as="h2" size={{ base: "2xl", md: "4xl" }} fontWeight="black" mb="6" color="white" lineHeight="1.1">
                 Turn Any Text Input into <br />
                 <Text as="span" bgGradient="linear(to-r, #FF6B6B, brand.500, #4ECDC4)" bgClip="text">
                   Engaging Video Content
@@ -71,18 +63,14 @@ const AdSteps = () => {
               <Text fontSize="xl" color="gray.300" mb={8} lineHeight="relaxed">
                 Whether you have a rough idea, a polished script, or an existing article, Topview adapts to your content source.
               </Text>
-            </MotionBox>
+            </Box>
           </Box>
 
           {/* Scenarios Grid */}
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing="10">
             {scenarios.map((item, index) => (
-              <MotionBox
+              <Box
                 key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 borderRadius="3xl"
                 bg="whiteAlpha.50"
                 border="1px solid"
@@ -90,7 +78,7 @@ const AdSteps = () => {
                 overflow="hidden"
                 p={8}
                 _hover={{ borderColor: item.accent, bg: "whiteAlpha.100", transform: "translateY(-5px)" }}
-                style={{ transition: "all 0.3s" }}
+                transition="all 0.3s"
               >
                 <VStack align="center" spacing={6} textAlign="center">
                   <Heading as="h3" size="lg" color="white" fontWeight="bold">
@@ -133,7 +121,7 @@ const AdSteps = () => {
                     </VStack>
                   </Stack>
                 </VStack>
-              </MotionBox>
+              </Box>
             ))}
           </SimpleGrid>
         </VStack>

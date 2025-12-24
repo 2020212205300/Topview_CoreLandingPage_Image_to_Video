@@ -1,9 +1,6 @@
-import { Box, Container, Heading, Text, SimpleGrid, Flex, Icon, Image, List, ListItem, ListIcon, VStack, IconButton, useToast } from "@chakra-ui/react";
-import { Target, ShoppingCart, User, Smartphone, Check, Video, Play, Volume2, VolumeX, Copy } from "lucide-react";
-import { motion } from "framer-motion";
+import { Box, Container, Heading, Text, SimpleGrid, Flex, Icon, VStack, IconButton, useToast } from "@chakra-ui/react";
+import { Play, Volume2, VolumeX, Copy } from "lucide-react";
 import { useState } from "react";
-
-const MotionBox = motion(Box);
 
 const videoTypes = [
   { 
@@ -66,39 +63,47 @@ const AIFeatures = () => {
     <Box as="section" py={{ base: 12, md: 20 }} px="6" bg="black">
       <Container maxW="container.xl">
         <Box textAlign="center" mb="16">
-          <MotionBox
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <Heading as="h2" size="2xl" fontWeight="black" mb="4" color="white">
+          <Box>
+            <Heading as="h2" size={{ base: "2xl", md: "4xl" }} fontWeight="black" mb="4" color="white">
               From Simple Text to <Text as="span" bgGradient="linear(to-r, #FF6B6B, brand.500, #4ECDC4)" bgClip="text">Full Video Production</Text>
             </Heading>
-          </MotionBox>
+          </Box>
         </Box>
 
         <SimpleGrid columns={{ base: 1, sm: 2, lg: 4 }} spacing="8" maxW="container.xl" mx="auto">
           {videoTypes.map((type, index) => (
-            <MotionBox
+            <Box
               key={type.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               borderRadius="3xl"
               overflow="hidden"
               bg="whiteAlpha.50"
               border="1px solid"
               borderColor="whiteAlpha.100"
-              _hover={{ borderColor: type.borderColor, transform: "translateY(-10px)", bg: "whiteAlpha.100" }}
+              _hover={{ 
+                borderColor: type.borderColor, 
+                transform: "translateY(-10px)", 
+                bg: "whiteAlpha.100",
+                boxShadow: `0 20px 40px -20px ${type.borderColor === 'purple.500' ? 'rgba(128, 90, 213, 0.3)' : 
+                             type.borderColor === 'blue.500' ? 'rgba(49, 130, 206, 0.3)' : 
+                             type.borderColor === 'green.500' ? 'rgba(56, 161, 105, 0.3)' : 
+                             'rgba(213, 63, 140, 0.3)'}`
+              }}
               role="group"
               display="flex"
               flexDirection="column"
               position="relative"
+              transition="all 0.3s ease-in-out"
             >
               <Box p="4">
-                <Box aspectRatio="9/16" position="relative" overflow="hidden" borderRadius="2xl" bg="black" mb="4">
+                <Box 
+                  aspectRatio="9/16" 
+                  position="relative" 
+                  borderRadius="2xl" 
+                  bg="black" 
+                  mb="4" 
+                  isolation="isolate"
+                  overflow="hidden"
+                >
                   <Box
                     as="video"
                     src={type.videoSrc}
@@ -109,10 +114,13 @@ const AIFeatures = () => {
                     w="full"
                     h="full"
                     objectFit="cover"
+                    style={{ 
+                      borderRadius: "inherit",
+                    }}
                   />
                   
                   {/* Prompt Overlay on Hover */}
-                  <MotionBox
+                  <Box
                     position="absolute"
                     top="0"
                     left="0"
@@ -126,15 +134,16 @@ const AIFeatures = () => {
                     justifyContent="center"
                     opacity="0"
                     _groupHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
+                    transition="0.3s"
                     zIndex="2"
+                    style={{ borderRadius: "inherit" }}
                   >
                     <VStack align="start" spacing={3} h="full" justify="center">
                       <Flex align="center" justify="space-between" w="full" mb={1}>
                         <Flex align="center" gap={2}>
                           <Icon as={Play} w={4} h={4} color={type.borderColor} />
                           <Text color={type.borderColor} fontSize="xs" fontWeight="black" textTransform="uppercase" letterSpacing="wider">
-                            AI Prompt
+                            Prompt
                           </Text>
                         </Flex>
                         <IconButton
@@ -159,7 +168,7 @@ const AIFeatures = () => {
                         </Text>
                       </Box>
                     </VStack>
-                  </MotionBox>
+                  </Box>
 
                   {/* Sound Toggle Button */}
                   <Flex
@@ -205,7 +214,7 @@ const AIFeatures = () => {
                   </Text>
                 </VStack>
               </Box>
-            </MotionBox>
+            </Box>
           ))}
         </SimpleGrid>
       </Container>

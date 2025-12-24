@@ -1,135 +1,135 @@
-import { Box, Container, Heading, Text, VStack, HStack, Icon, SimpleGrid, Badge, Flex } from "@chakra-ui/react";
-import { Info } from "lucide-react";
-import { motion } from "framer-motion";
+import { Box, Container, Heading, Text, VStack, HStack, Icon, SimpleGrid, Badge, Flex, Image, Button } from "@chakra-ui/react";
+import { Info, Sparkles, ChevronRight } from "lucide-react";
 
-const MotionBox = motion(Box);
+const aiModels = [
+  { name: "Sora", icon: "/Sora.svg" },
+  { name: "Veo", icon: "/gemini-sparkle.svg" },
+  { name: "Seedance", icon: "/seedance.svg" },
+  { name: "Kling", icon: "/kling.svg" },
+  { name: "Wan", icon: "/wan.svg" },
+  { name: "Vidu", icon: "/vidu.svg" },
+];
 
 const GeneratorSection = () => {
   return (
-    <Box as="section" py={{ base: 16, md: 24 }} px="6" bg="black">
-      <Container maxW="container.lg">
-        <MotionBox
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          bg="whiteAlpha.50"
-          border="1px solid"
-          borderColor="whiteAlpha.100"
-          borderRadius="3xl"
-          p={{ base: 8, md: 12 }}
-          position="relative"
-          overflow="hidden"
-          _before={{
-            content: '""',
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            height: "2px",
-            bgGradient: "linear(to-r, transparent, brand.500, transparent)",
-          }}
-        >
-          {/* SEO Authority Indicator */}
-          <HStack spacing={2} mb={6}>
-            <Icon as={Info} color="brand.400" w={4} h={4} />
-            <Text 
-              color="brand.400" 
-              fontSize="xs" 
-              fontWeight="bold" 
-              letterSpacing="widest" 
-              textTransform="uppercase"
-            >
-              Definitive Guide
-            </Text>
-          </HStack>
-
-          <VStack align="start" spacing={8} position="relative" zIndex={1}>
+    <Box as="section" py={{ base: 20, md: 32 }} px="6" bg="black" position="relative" overflow="hidden">
+      <Container maxW="container.xl">
+        <VStack spacing={16} textAlign="center">
+          {/* Header */}
+          <VStack spacing={6} maxW="4xl" mx="auto">
             <Heading
               as="h2"
-              size="2xl"
+              size={{ base: "2xl", md: "4xl" }}
               color="white"
               fontWeight="black"
-              lineHeight="shorter"
-              letterSpacing="tight"
+              lineHeight="1.1"
             >
-              What Is <Text as="span" bgGradient="linear(to-r, #FF6B6B, brand.500, #4ECDC4)" bgClip="text">Text to Video Generator</Text>?
+              All-in-One <Text as="span" bgGradient="linear(to-r, #FF6B6B, brand.500, #4ECDC4)" bgClip="text">Text to Video</Text> Using the Best AI Video Models
             </Heading>
-
-            <Box position="relative">
-              <Box 
-                position="absolute" 
-                left="-24px" 
-                top="0" 
-                bottom="0" 
-                w="4px" 
-                bg="brand.500" 
-                borderRadius="full"
-                display={{ base: "none", md: "block" }}
-              />
-              <Text 
-                color="gray.300" 
-                fontSize={{ base: "lg", md: "xl" }} 
-                lineHeight="tall"
-                maxW="3xl"
-                fontWeight="medium"
-              >
-                Topview Text to Video Generator is a generative technology that converts natural language prompts or scripts into video content. Topview's AI Agent analyzes the semantic meaning of your text to automatically generate relevant visuals, select background music, add voiceovers, and edit scenes together—compressing weeks of video production into minutes.
-              </Text>
-            </Box>
-
-            <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} w="full" pt={6}>
-              <VStack align="start" spacing={2}>
-                <Text fontWeight="bold" color="white" fontSize="lg">NLP Processing</Text>
-                <Text color="gray.400" fontSize="sm" lineHeight="relaxed">
-                  Understands context, humor, and selling points to create resonant scripts.
-                </Text>
-              </VStack>
-
-              <VStack align="start" spacing={2}>
-                <Text fontWeight="bold" color="white" fontSize="lg">Multi-Model Fusion</Text>
-                <Text color="gray.400" fontSize="sm" lineHeight="relaxed">
-                  Combines Sora, Veo, and Nano Banana models for world-class visual output.
-                </Text>
-              </VStack>
-
-              <VStack align="start" spacing={2}>
-                <Text fontWeight="bold" color="white" fontSize="lg">Auto-Storyboarding</Text>
-                <Text color="gray.400" fontSize="sm" lineHeight="relaxed">
-                  Intelligently plans and edits scene sequences for maximum narrative impact.
-                </Text>
-              </VStack>
-            </SimpleGrid>
+            <Text 
+              color="gray.400" 
+              fontSize={{ base: "lg", md: "xl" }} 
+              lineHeight="tall"
+              fontWeight="medium"
+            >
+              Topview is not limited to a single AI engine. We integrate multiple state-of-the-art AI video models, allowing you to generate higher-quality videos for different use cases.
+            </Text>
           </VStack>
 
-          {/* Decorative Background Glows */}
+          {/* Model Display Card */}
           <Box
-            position="absolute"
-            top="-20%"
-            right="-10%"
-            w="400px"
-            h="400px"
-            bg="brand.500"
-            filter="blur(140px)"
-            opacity="0.07"
-            borderRadius="full"
-            zIndex={0}
-            pointerEvents="none"
-          />
-          <Box
-            position="absolute"
-            bottom="-20%"
-            left="-10%"
-            w="300px"
-            h="300px"
-            bg="purple.500"
-            filter="blur(120px)"
-            opacity="0.05"
-            borderRadius="full"
-            zIndex={0}
-            pointerEvents="none"
-          />
-        </MotionBox>
+            bg="whiteAlpha.50"
+            border="1px solid"
+            borderColor="whiteAlpha.100"
+            borderRadius="4xl"
+            p={{ base: 8, md: 16 }}
+            w="full"
+            position="relative"
+            _before={{
+              content: '""',
+              position: "absolute",
+              top: "-20%",
+              left: "10%",
+              right: "10%",
+              bottom: "20%",
+              bgGradient: "radial(circle, brand.500, transparent)",
+              opacity: 0.05,
+              filter: "blur(60px)",
+              pointerEvents: "none",
+            }}
+          >
+            <SimpleGrid columns={{ base: 2, sm: 3, md: 3, lg: 3 }} spacing={{ base: 6, md: 10 }}>
+              {aiModels.map((model, index) => (
+                <Box
+                  key={model.name}
+                  bg="black"
+                  border="1px solid"
+                  borderColor="whiteAlpha.100"
+                  borderRadius="2xl"
+                  p={6}
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="center"
+                  justifyContent="center"
+                  gap={4}
+                  _hover={{ borderColor: "brand.500", transform: "translateY(-5px)", bg: "whiteAlpha.50" }}
+                  transition="all 0.3s"
+                >
+                  <Box w="10" h="10" display="flex" alignItems="center" justifyContent="center">
+                    <Image src={model.icon} alt={model.name} w="full" h="full" />
+                  </Box>
+                  <Text color="white" fontWeight="bold" fontSize="md">{model.name}</Text>
+                </Box>
+              ))}
+            </SimpleGrid>
+
+            <VStack spacing={6} mt={16}>
+              <Text color="gray.500" fontSize="md" fontWeight="medium" maxW="2xl">
+                This means better motion, better realism, and better results for marketing and ecommerce videos. One platform. Multiple AI models. One text input.
+              </Text>
+              
+              <Box
+                position="relative"
+                p="1.5px"
+                borderRadius="full"
+                overflow="hidden"
+                display="inline-block"
+                transition="all 0.3s"
+                role="group"
+                cursor="pointer"
+                _hover={{ transform: "scale(1.05)" }}
+                _before={{
+                  content: '""',
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  right: "0",
+                  bottom: "0",
+                  background: "linear-gradient(to-r, #FF6B6B, brand.500, #4ECDC4)",
+                  opacity: 0.8,
+                }}
+              >
+                <Button
+                  size="lg"
+                  height="60px"
+                  px={10}
+                  fontSize="lg"
+                  fontWeight="black"
+                  bg="black"
+                  _hover={{ bg: "black" }}
+                  _active={{ bg: "black" }}
+                  color="white"
+                  borderRadius="full"
+                  position="relative"
+                  zIndex="1"
+                  rightIcon={<Icon as={ChevronRight} size={20} color="#A29BFE" />}
+                >
+                  Create Video with AI Now
+                </Button>
+              </Box>
+            </VStack>
+          </Box>
+        </VStack>
       </Container>
     </Box>
   );

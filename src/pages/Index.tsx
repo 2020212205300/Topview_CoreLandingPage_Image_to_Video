@@ -3,7 +3,7 @@ import PromoBanner from "@/components/PromoBanner";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AIFeatures from "@/components/AIFeatures";
-import AgentDifferences from "@/components/AgentDifferences";
+import PlatformOptimization from "@/components/AgentDifferences";
 import AgentCapabilities from "@/components/AgentCapabilities";
 import GeneratorSection from "@/components/GeneratorSection";
 import MethodsSection from "@/components/MethodsSection";
@@ -24,7 +24,7 @@ const Index = () => {
         <GeneratorSection />
         <MethodsSection />
         <AdSteps />
-        <AgentDifferences />
+        <PlatformOptimization />
         <AgentCapabilities />
         <StepsSection />
         <FAQSection />

@@ -1,35 +1,27 @@
-import { Box, Container, Heading, Text, Flex, Button, IconButton, Icon, Textarea, VStack } from "@chakra-ui/react";
-import { Image, Video, ArrowUp, Sparkles, ChevronRight, Play } from "lucide-react";
-import { motion } from "framer-motion";
-
-const MotionBox = motion(Box);
-const MotionHeading = motion(Heading);
-const MotionText = motion(Text);
+import { Box, Container, Heading, Text, Flex, Button, Icon, Textarea, VStack, HStack, Center } from "@chakra-ui/react";
+import { Sparkles, Upload } from "lucide-react";
+import { useState } from "react";
 
 const HeroSection = () => {
+  const [activeTab, setActiveTab] = useState("text");
+
   return (
     <Box as="section" pt="40" pb="20" px="6">
       <Container maxW="container.xl" textAlign="center">
         {/* Main Title */}
-        <MotionHeading
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+        <Heading
           as="h1"
           size={{ base: "2xl", md: "4xl" }}
           fontWeight="black"
           mb="6"
         >
-          <Text as="span" bgGradient="linear(to-r, #FF6B6B, brand.500, #4ECDC4)" bgClip="text">
+          <Text as="span" bgGradient="linear(to-r, #FF6B6B, #805AD5, #4ECDC4)" bgClip="text">
             Text to Video Generator
           </Text>
-        </MotionHeading>
+        </Heading>
 
         {/* Description */}
-        <MotionText
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+        <Text
           color="whiteAlpha.900"
           fontSize={{ base: "xl", md: "2xl" }}
           fontWeight="bold"
@@ -39,103 +31,180 @@ const HeroSection = () => {
           lineHeight="tall"
         >
           Turn Scripts, Prompts, and Ideas into Ready-to-Publish Videos.
-        </MotionText>
+        </Text>
 
         {/* Input Box */}
         <Box maxW="3xl" mx="auto" mb="10">
-          <MotionBox
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            bg="whiteAlpha.100"
+          <Box
+            bg="#0d0d0d"
             backdropFilter="blur(20px)"
             borderRadius="3xl"
-            p="8"
             border="1px solid"
             borderColor="whiteAlpha.200"
             textAlign="left"
+            overflow="hidden"
           >
-            <VStack align="start" spacing={4} w="full">
-              <Text color="white" fontWeight="bold" fontSize="lg">
-                Describe your video idea or paste your script...
-              </Text>
-              
-              <Textarea
-                placeholder="Example: Create a 30s TikTok ad for a new organic coffee brand. Energetic tone, focusing on morning routine..."
-                bg="whiteAlpha.50"
-                border="1px solid"
-                borderColor="whiteAlpha.100"
-                borderRadius="xl"
-                color="white"
-                _placeholder={{ color: "gray.500" }}
-                _hover={{ borderColor: "whiteAlpha.300" }}
-                _focus={{ borderColor: "brand.500", boxShadow: "none" }}
-                minH="120px"
-                p={4}
-                resize="none"
-              />
+            {/* Tabs */}
+            <Flex borderBottom="1px solid" borderColor="whiteAlpha.100">
+              <Box
+                flex="1"
+                py="4"
+                textAlign="center"
+                cursor="pointer"
+                fontWeight="bold"
+                fontSize="sm"
+                color={activeTab === "text" ? "#805AD5" : "gray.500"}
+                borderBottom="2px solid"
+                borderColor={activeTab === "text" ? "#805AD5" : "transparent"}
+                onClick={() => setActiveTab("text")}
+                transition="all 0.3s"
+                _hover={{ color: activeTab === "text" ? "#805AD5" : "white" }}
+              >
+                Text to Video
+              </Box>
+              <Box
+                flex="1"
+                py="4"
+                textAlign="center"
+                cursor="pointer"
+                fontWeight="bold"
+                fontSize="sm"
+                color={activeTab === "image" ? "#805AD5" : "gray.500"}
+                borderBottom="2px solid"
+                borderColor={activeTab === "image" ? "#805AD5" : "transparent"}
+                onClick={() => setActiveTab("image")}
+                transition="all 0.3s"
+                _hover={{ color: activeTab === "image" ? "#805AD5" : "white" }}
+              >
+                Image to Video
+              </Box>
+            </Flex>
 
-              <Flex w="full" alignItems="center" gap="3" pt={2}>
-                <Button
-                  leftIcon={<Icon as={Image} w={4} h={4} />}
-                  variant="ghost"
-                  color="gray.400"
-                  bg="whiteAlpha.100"
-                  _hover={{ color: "white", bg: "whiteAlpha.200" }}
-                  size="sm"
+            <VStack align="start" spacing={6} p="8" w="full">
+              {/* Prompt Section */}
+              <VStack align="start" spacing={2} w="full">
+                <Text color="white" fontWeight="bold" fontSize="md">
+                  Prompt
+                </Text>
+                <Box w="full" position="relative">
+                  <Textarea
+                    placeholder="What do you want to create?"
+                    bg="black"
+                    border="1px solid"
+                    borderColor="whiteAlpha.200"
+                    borderRadius="2xl"
+                    color="white"
+                    _placeholder={{ color: "gray.600" }}
+                    _hover={{ borderColor: "whiteAlpha.400" }}
+                    _focus={{ borderColor: "#805AD5", boxShadow: "none" }}
+                    minH="150px"
+                    p={6}
+                    resize="none"
+                  />
+                  <Text position="absolute" bottom="4" left="6" color="gray.600" fontSize="xs">
+                    0 / 1500
+                  </Text>
+                </Box>
+              </VStack>
+
+              {activeTab === "text" ? (
+                /* Text to Video Specific: Ideas */
+                <VStack align="start" spacing={3} w="full">
+                  <Text color="white" fontWeight="bold" fontSize="md">
+                    Ideas:
+                  </Text>
+                  <HStack spacing={3} wrap="wrap">
+                    {["Café Vibes", "Gadget Unboxing", "Eco-Friendly Showcase", "Fashion Forward"].map((idea) => (
+                      <Box
+                        key={idea}
+                        px={4}
+                        py={2}
+                        bg="whiteAlpha.50"
+                        border="1px solid"
+                        borderColor="whiteAlpha.100"
+                        borderRadius="xl"
+                        fontSize="sm"
+                        color="gray.400"
+                        cursor="pointer"
+                        _hover={{ bg: "whiteAlpha.100", color: "white", borderColor: "#805AD5" }}
+                        transition="0.2s"
+                      >
+                        {idea}
+                      </Box>
+                    ))}
+                  </HStack>
+                </VStack>
+              ) : (
+                /* Image to Video Specific: Upload Area */
+                <VStack align="start" spacing={3} w="full">
+                  <Text color="white" fontWeight="bold" fontSize="md">
+                    Image
+                  </Text>
+                  <Center
+                    w="full"
+                    minH="200px"
+                    bg="black"
+                    border="1px dashed"
+                    borderColor="whiteAlpha.300"
+                    borderRadius="2xl"
+                    flexDirection="column"
+                    cursor="pointer"
+                    _hover={{ borderColor: "#805AD5", bg: "whiteAlpha.50" }}
+                    transition="0.3s"
+                  >
+                    <Icon as={Upload} w={8} h={8} color="gray.500" mb={4} />
+                    <Text color="white" fontWeight="bold" mb={2}>
+                      Click to upload image
+                    </Text>
+                    <Text color="gray.500" fontSize="xs" textAlign="center" px={10}>
+                      Upload JPG/PNG/WEBP images up to 10MB, with a minimum width and height of 300px.
+                    </Text>
+                  </Center>
+                </VStack>
+              )}
+
+              <Flex w="full" justifyContent="center" pt={4}>
+                <Box
+                  position="relative"
+                  p="1.5px"
                   borderRadius="full"
+                  overflow="hidden"
+                  display="inline-block"
+                  role="group"
+                  cursor="pointer"
+                  _hover={{ transform: "scale(1.05)" }}
+                  style={{ transition: "all 0.3s" }}
+                  _before={{
+                    content: '""',
+                    position: "absolute",
+                    top: "-150%",
+                    left: "-150%",
+                    width: "400%",
+                    height: "400%",
+                    background: "conic-gradient(from 0deg, transparent 0 15%, #FF6B6B 20%, #4ECDC4 30%, transparent 35% 65%, #A29BFE 70%, #4ECDC4 80%, transparent 85% 100%)",
+                  }}
                 >
-                  Add Image & Link
-                </Button>
-                <Button
-                  leftIcon={<Icon as={Video} w={4} h={4} />}
-                  variant="ghost"
-                  color="gray.400"
-                  bg="whiteAlpha.100"
-                  _hover={{ color: "white", bg: "whiteAlpha.200" }}
-                  size="sm"
-                  borderRadius="full"
-                >
-                  Reference Video
-                </Button>
-                <Box flex="1" />
-                <Button
-                  rightIcon={<Icon as={ArrowUp} w={4} h={4} />}
-                  bg="brand.500"
-                  color="white"
-                  px={8}
-                  borderRadius="full"
-                  _hover={{ bg: "brand.600", transform: "translateY(-2px)" }}
-                  transition="all 0.2s"
-                >
-                  Generate Video
-                </Button>
+                  <Button
+                    leftIcon={<Icon as={Sparkles} w={4} h={4} color="#A29BFE" />}
+                    bg="black"
+                    _hover={{ bg: "black" }}
+                    _active={{ bg: "black" }}
+                    color="white"
+                    px={12}
+                    height="54px"
+                    borderRadius="full"
+                    fontSize="lg"
+                    fontWeight="black"
+                    position="relative"
+                    zIndex="1"
+                  >
+                    Start Creating for Free
+                  </Button>
+                </Box>
               </Flex>
             </VStack>
-          </MotionBox>
+          </Box>
         </Box>
-
-        {/* CTA Button */}
-        <MotionBox
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          <Button
-            size="lg"
-            bg="white"
-            color="black"
-            px={10}
-            height="60px"
-            fontSize="xl"
-            fontWeight="black"
-            borderRadius="full"
-            _hover={{ transform: "scale(1.05)", bg: "whiteAlpha.900" }}
-            transition="all 0.3s"
-          >
-            Start Creating for Free
-          </Button>
-        </MotionBox>
       </Container>
     </Box>
   );

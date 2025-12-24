@@ -31,7 +31,7 @@ const FAQSection = () => {
   return (
     <Box as="section" py="20" px="6">
       <Container maxW="container.md">
-        <Heading as="h2" textAlign="center" size="xl" fontWeight="bold" mb="12">
+        <Heading as="h2" textAlign="center" size={{ base: "2xl", md: "4xl" }} fontWeight="black" mb="12">
           <Text as="span" bgGradient="linear(to-r, #FF6B6B, #805AD5, #4ECDC4)" bgClip="text">Text to Video</Text> FAQ
         </Heading>
 

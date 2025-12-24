@@ -1,7 +1,4 @@
 import { Box, Container, Heading, Text, SimpleGrid, VStack, Badge } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-
-const MotionBox = motion(Box);
 
 const steps = [
   {
@@ -26,20 +23,7 @@ const StepsSection = () => {
     <Box as="section" py={{ base: 16, md: 24 }} px="6" bg="black" position="relative">
       <Container maxW="container.xl">
         <VStack spacing={4} textAlign="center" mb={16}>
-          <Badge
-            bg="rgba(128, 90, 213, 0.1)"
-            color="#805AD5"
-            px={4}
-            py={1}
-            borderRadius="full"
-            fontSize="xs"
-            fontWeight="bold"
-            letterSpacing="wider"
-            mb={2}
-          >
-            HOW IT WORKS
-          </Badge>
-          <Heading as="h2" size="2xl" fontWeight="black" color="white">
+          <Heading as="h2" size={{ base: "2xl", md: "4xl" }} fontWeight="black" color="white" lineHeight="shorter">
             How to Convert{" "}
             <Text as="span" bgGradient="linear(to-r, #FF6B6B, #805AD5, #4ECDC4)" bgClip="text">
               Text to Video
@@ -53,12 +37,8 @@ const StepsSection = () => {
 
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
           {steps.map((step, index) => (
-            <MotionBox
+            <Box
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               bg="#0d0d0d"
               borderRadius="3xl"
               p={10}
@@ -70,7 +50,7 @@ const StepsSection = () => {
                 transform: "translateY(-5px)",
                 bg: "rgba(128, 90, 213, 0.02)"
               }}
-              style={{ transition: "all 0.3s ease" }}
+              transition="all 0.3s ease"
             >
               <VStack align="start" spacing={4}>
                 <Text
@@ -88,7 +68,7 @@ const StepsSection = () => {
                   {step.description}
                 </Text>
               </VStack>
-            </MotionBox>
+            </Box>
           ))}
         </SimpleGrid>
       </Container>

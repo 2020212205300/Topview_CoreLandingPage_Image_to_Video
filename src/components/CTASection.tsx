@@ -1,20 +1,6 @@
 import { Box, Container, Heading, Text, Button, VStack, Flex, Icon, IconButton, SimpleGrid, HStack } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 import { ArrowRight, Sparkles, Image, Video, ArrowUp } from "lucide-react";
-import { motion } from "framer-motion";
-
-const flow = keyframes`
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-`;
-
-const rotate = keyframes`
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-`;
-
-const MotionBox = motion(Box);
 
 const CTASection = () => {
   return (
@@ -36,19 +22,14 @@ const CTASection = () => {
 
       <Container maxW="container.md" position="relative" zIndex="1">
         <VStack spacing={12} textAlign="center">
-          <MotionBox
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <Box>
             <Heading
               as="h2"
-              size={{ base: "xl", md: "2xl" }}
+              size={{ base: "2xl", md: "4xl" }}
               fontWeight="black"
               mb={6}
               color="white"
-              lineHeight="shorter"
+              lineHeight="1.1"
             >
               Start Turning <Text as="span" bgGradient="linear(to-r, #FF6B6B, #805AD5, #4ECDC4)" bgClip="text">Your Words into Videos</Text>
             </Heading>
@@ -61,13 +42,9 @@ const CTASection = () => {
                 Join 100,000+ creators turning scripts into viral reality.
               </Text>
             </VStack>
-          </MotionBox>
+          </Box>
 
-          <MotionBox
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+          <Box
             position="relative"
             display="inline-block"
           >
@@ -90,15 +67,19 @@ const CTASection = () => {
               borderRadius="full"
               overflow="hidden"
               display="inline-block"
+              transition="all 0.3s"
+              role="group"
+              cursor="pointer"
+              _hover={{ transform: "scale(1.05)" }}
               _before={{
                 content: '""',
                 position: "absolute",
-                top: "-150%",
-                left: "-150%",
-                width: "400%",
-                height: "400%",
-                background: "conic-gradient(from 0deg, transparent 0 15%, #FF6B6B 20%, #4ECDC4 30%, transparent 35% 65%, #A29BFE 70%, #4ECDC4 80%, transparent 85% 100%)",
-                animation: `${rotate} 4s linear infinite`,
+                top: "0",
+                left: "0",
+                right: "0",
+                bottom: "0",
+                background: "linear-gradient(to-r, #FF6B6B, brand.500, #4ECDC4)",
+                opacity: 0.8,
               }}
             >
               <Button
@@ -113,15 +94,14 @@ const CTASection = () => {
                 position="relative"
                 zIndex="1"
                 rightIcon={<Icon as={ArrowRight} w={6} h={6} color="#A29BFE" />}
-                cursor="default"
-                pointerEvents="none"
-                transition="none"
+                _hover={{ bg: "black" }}
+                _active={{ bg: "black" }}
                 letterSpacing="-0.02em"
               >
                 Create Video with AI Now
               </Button>
             </Box>
-          </MotionBox>
+          </Box>
         </VStack>
       </Container>
     </Box>

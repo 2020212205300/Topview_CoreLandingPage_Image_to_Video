@@ -1,36 +1,31 @@
-import { Box, Container, Heading, Text, VStack, HStack, Icon, Flex, Badge, Image, Stack } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import { ScrollText, ShieldCheck, LayoutPanelLeft, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Box, Container, Heading, Text, VStack, SimpleGrid, Icon, HStack } from "@chakra-ui/react";
+import { Rocket, Users, ShoppingBag, BarChart3, ChevronRight } from "lucide-react";
 
-const MotionBox = motion(Box);
+const templateLabels = [
+  { title: "Viral Video", icon: Rocket, color: "#FF6B6B" },
+  { title: "UGC Video", icon: Users, color: "#4ECDC4" },
+  { title: "Shoppable Video", icon: ShoppingBag, color: "#805AD5" },
+  { title: "Ads Video", icon: BarChart3, color: "#3182CE" }
+];
 
-const values = [
-  {
-    title: "Script Understanding",
-    description: "The Agent identifies hooks, pain points, and CTAs in your text to structure the video logically.",
-    icon: ScrollText,
-    accent: "blue.400",
-    tags: ["NLP", "Strategy"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop",
-    features: ["Hook Identification", "Pain Point Analysis", "Logical Sequencing"]
+const templateImages = [
+  { 
+    label: "Viral Marketing"
   },
-  {
-    title: "Commercial Consistency",
-    description: "Generates consistent characters and brand styles across different scenes, unlike random AI generation.",
-    icon: ShieldCheck,
-    accent: "brand.500",
-    tags: ["Branding", "Visual AI"],
-    image: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=800&auto=format&fit=crop",
-    features: ["Character Persistence", "Brand Style Sync", "Asset Management"]
+  { 
+    label: "UGC Creators"
   },
-  {
-    title: "Full-Stack Editing",
-    description: "Auto-adds captions, B-roll, music, and voiceovers. It’s a finished product, not just raw footage.",
-    icon: LayoutPanelLeft,
-    accent: "cyan.400",
-    tags: ["Automation", "Ready-to-use"],
-    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop",
-    features: ["Auto-Captions", "B-roll Integration", "Voiceover Sync"]
+  { 
+    label: "Product Demos"
+  },
+  { 
+    label: "Social Growth"
+  },
+  { 
+    label: "Brand Stories"
+  },
+  { 
+    label: "Viral Shorts"
   }
 ];
 
@@ -38,130 +33,114 @@ const MethodsSection = () => {
   return (
     <Box as="section" py={{ base: 20, md: 32 }} bg="black" position="relative" overflow="hidden">
       <Container maxW="container.xl">
-        <VStack spacing={12} align="center" mb={24} textAlign="center">
-          <MotionBox
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            maxW="3xl"
-          >
-            <Badge 
-              colorScheme="brand" 
-              variant="subtle" 
-              px={3} 
-              py={1} 
-              borderRadius="full" 
-              mb={6}
-              bg="brand.900"
-              color="brand.400"
-              border="1px solid"
-              borderColor="brand.800"
-            >
-              CORE VALUE
-            </Badge>
-            <Heading as="h2" size="2xl" fontWeight="black" mb="6" color="white" lineHeight="1.1">
-              Why Use Topview for <Text as="span" bgGradient="linear(to-r, #FF6B6B, brand.500, #4ECDC4)" bgClip="text">Text to Video</Text>?
+        <VStack spacing={12} align="center" textAlign="center">
+          <Box maxW="4xl">
+            <Heading as="h2" size={{ base: "2xl", md: "4xl" }} fontWeight="black" mb="6" color="white" lineHeight="1.1">
+              Viral <Text as="span" bgGradient="linear(to-r, #FF6B6B, #805AD5, #4ECDC4)" bgClip="text">Text to Video</Text> Templates
             </Heading>
-            <Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="medium" color="whiteAlpha.900">
-              Most text-to-video tools only generate short, silent clips. 
-              <Text as="span" color="brand.400"> Topview</Text> builds complete commercial videos designed for business growth.
+            <Heading as="h3" size="lg" color="whiteAlpha.900" mb={6} fontWeight="bold">
+              Pre-Built Templates Based on Proven Video Formats
+            </Heading>
+            <Text fontSize={{ base: "lg", md: "xl" }} color="gray.400" maxW="3xl" mx="auto">
+              Topview includes ready-to-use text to video templates based on real high-performing content.
             </Text>
-          </MotionBox>
-        </VStack>
+          </Box>
 
-        <VStack spacing={{ base: 20, md: 32 }}>
-          {values.map((val, index) => (
-            <Stack 
-              key={val.title}
-              direction={{ base: "column", lg: index % 2 === 0 ? "row" : "row-reverse" }}
-              spacing={{ base: 12, lg: 24 }}
-              align="center"
-              w="full"
-            >
-              {/* Image Side */}
-              <MotionBox
-                initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                flex="1"
-                w="full"
+          {/* Labels Section */}
+          <SimpleGrid columns={{ base: 1, sm: 2, lg: 4 }} spacing={6} w="full">
+            {templateLabels.map((label) => (
+              <Box
+                key={label.title}
+                bg="whiteAlpha.50"
+                px={6}
+                py={4}
+                borderRadius="xl"
+                border="1px solid"
+                borderColor="whiteAlpha.100"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                gap={3}
+                _hover={{ bg: "whiteAlpha.100", borderColor: label.color }}
+                transition="all 0.3s"
               >
-                <Box 
-                  position="relative" 
-                  borderRadius="3xl" 
-                  overflow="hidden"
-                  boxShadow="0 20px 40px -10px rgba(0,0,0,0.5)"
-                  border="1px solid"
-                  borderColor="whiteAlpha.100"
-                  _before={{
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    bgGradient: `linear(to-br, ${val.accent}, transparent)`,
-                    opacity: 0.1,
-                    zIndex: 1
-                  }}
+                <Icon as={label.icon} w={4} h={4} color={label.color} />
+                <Text color="whiteAlpha.800" fontSize="sm" fontWeight="medium">
+                  {label.title}
+                </Text>
+              </Box>
+            ))}
+          </SimpleGrid>
+
+          {/* Images Grid */}
+          <SimpleGrid columns={{ base: 2, md: 3, lg: 6 }} spacing={6} w="full" pt={8}>
+            {templateImages.map((img, index) => (
+              <Box
+                key={index}
+                position="relative"
+                borderRadius="2xl"
+                overflow="hidden"
+                aspectRatio="9/16"
+                bg="whiteAlpha.50"
+                role="group"
+                cursor="pointer"
+                _hover={{ transform: "translateY(-8px)" }}
+                transition="all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)"
+              >
+                <VStack
+                  position="absolute"
+                  bottom="5"
+                  left="0"
+                  right="0"
+                  spacing={1}
+                  zIndex="2"
+                  px={2}
                 >
-                  <Image 
-                    src={val.image} 
-                    alt={val.title}
-                    w="full"
-                    h={{ base: "300px", md: "450px" }}
-                    objectFit="cover"
-                    crossOrigin="anonymous"
-                  />
-                </Box>
-              </MotionBox>
-
-              {/* Text Side */}
-              <MotionBox
-                initial={{ opacity: 0, x: index % 2 === 0 ? 40 : -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                flex="1"
-                w="full"
-              >
-                <VStack align="start" spacing={6}>
-                  <Heading as="h3" size="xl" color="white" fontWeight="bold">
-                    {val.title}
-                  </Heading>
-                  
-                  <Text color="gray.400" fontSize="lg" lineHeight="tall">
-                    {val.description}
+                  <Text
+                    color="white"
+                    fontSize="xs"
+                    fontWeight="black"
+                    textTransform="uppercase"
+                    letterSpacing="tighter"
+                    opacity="0.7"
+                  >
+                    Template
                   </Text>
-
-                  <VStack align="start" spacing={4} pt={2}>
-                    {val.features.map(feature => (
-                      <HStack key={feature} spacing={3}>
-                        <Icon as={CheckCircle2} color={val.accent} w={5} h={5} />
-                        <Text color="whiteAlpha.900" fontWeight="medium">{feature}</Text>
-                      </HStack>
-                    ))}
-                  </VStack>
-
-                  <Box pt={6}>
-                    <HStack 
-                      spacing={2} 
-                      color={val.accent} 
-                      cursor="pointer" 
-                      role="group"
-                      _hover={{ transform: "translateX(5px)" }}
-                      transition="0.3s"
-                    >
-                      <Text fontWeight="bold" fontSize="md">Start Creating for Free</Text>
-                      <Icon as={ArrowRight} w={5} h={5} />
-                    </HStack>
-                  </Box>
+                  <Text
+                    color="white"
+                    fontSize="sm"
+                    fontWeight="bold"
+                    lineHeight="shorter"
+                  >
+                    {img.label}
+                  </Text>
                 </VStack>
-              </MotionBox>
-            </Stack>
-          ))}
+              </Box>
+            ))}
+          </SimpleGrid>
+
+          <VStack spacing={6} pt={8}>
+            <Text color="gray.400" fontSize="lg" fontWeight="medium">
+              Simply enter your text. The template handles the structure.
+            </Text>
+            <HStack 
+              spacing={2} 
+              color="#A29BFE" 
+              cursor="pointer" 
+              role="group"
+              _hover={{ color: "brand.300" }}
+              transition="0.3s"
+            >
+              <Text fontWeight="bold">Explore All Templates</Text>
+              <Icon 
+                as={ChevronRight} 
+                w={5} 
+                h={5} 
+                _groupHover={{ transform: "translateX(4px)" }}
+                transition="0.3s"
+              />
+            </HStack>
+          </VStack>
         </VStack>
       </Container>
     </Box>
