@@ -53,22 +53,9 @@ const CTASection = () => {
             position="relative"
             display="inline-block"
           >
-            {/* Glow effect behind the button */}
-            <Box
-              position="absolute"
-              top="50%"
-              left="50%"
-              transform="translate(-50%, -50%)"
-              w="140%"
-              h="250%"
-              bgGradient="radial(circle, rgba(255,107,107,0.1) 0%, rgba(78,205,196,0.1) 40%, rgba(162,155,254,0.05) 60%, transparent 80%)"
-              filter="blur(50px)"
-              zIndex="-1"
-            />
-            
             <Box
               position="relative"
-              p="1.5px"
+              p="2px"
               borderRadius="full"
               overflow="hidden"
               display="inline-block"
@@ -84,7 +71,7 @@ const CTASection = () => {
                 right: "-150%",
                 bottom: "-150%",
                 background: "conic-gradient(from 0deg, #FF6B6B, #805AD5, #4ECDC4, #FF6B6B)",
-                animation: `${rotate} 4s linear infinite`,
+                animation: `${rotate} 3s linear infinite`,
               }}
             >
               <Button
