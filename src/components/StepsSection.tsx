@@ -46,10 +46,8 @@ const StepsSection = () => {
               position="relative"
               _hover={{
                 borderColor: "#805AD5",
-                transform: "translateY(-5px)",
                 bg: "rgba(128, 90, 213, 0.02)"
               }}
-              transition="all 0.3s ease"
             >
               <VStack align="start" spacing={4}>
                 <Text

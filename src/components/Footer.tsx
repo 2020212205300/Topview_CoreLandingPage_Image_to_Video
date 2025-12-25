@@ -1,20 +1,21 @@
 import { Box, Container, SimpleGrid, Text, VStack, HStack, Link, Icon, Flex } from "@chakra-ui/react";
 import { Twitter, Linkedin, Youtube, Instagram } from "lucide-react";
 
-const Footer = () => {
-  const footerLinks = {
-    Product: ["Features", "Pricing", "API", "Integrations"],
-    Resources: ["Blog", "Documentation", "Community", "Support"],
-    Company: ["About", "Careers", "Press", "Contact"],
-    Legal: ["Privacy", "Terms", "Cookie Policy"],
-  };
+const footerLinks = {
+  Product: ["Features", "Pricing", "API", "Integrations"],
+  Resources: ["Blog", "Documentation", "Community", "Support"],
+  Company: ["About", "Careers", "Press", "Contact"],
+  Legal: ["Privacy", "Terms", "Cookie Policy"],
+};
 
-  const socialLinks = [
-    { icon: Twitter, href: "#" },
-    { icon: Linkedin, href: "#" },
-    { icon: Youtube, href: "#" },
-    { icon: Instagram, href: "#" },
-  ];
+const socialLinks = [
+  { icon: Twitter, href: "#" },
+  { icon: Linkedin, href: "#" },
+  { icon: Youtube, href: "#" },
+  { icon: Instagram, href: "#" },
+];
+
+const Footer = () => {
 
   return (
     <Box as="footer" py="16" px="6" borderTop="1px solid" borderColor="whiteAlpha.200">

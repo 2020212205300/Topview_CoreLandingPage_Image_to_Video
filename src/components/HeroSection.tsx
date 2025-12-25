@@ -1,12 +1,9 @@
 import { Box, Container, Heading, Text, Flex, Button, Icon, Textarea, VStack, HStack, Center, SimpleGrid } from "@chakra-ui/react";
-import { keyframes } from "@emotion/react";
 import { Sparkles, Upload } from "lucide-react";
 
-const rotate = keyframes`
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-`;
 import { useState } from "react";
+
+const promptIdeas = ["Café Vibes", "Gadget Unboxing", "Eco-Friendly Showcase", "Fashion Forward"];
 
 const HeroSection = () => {
   const [activeTab, setActiveTab] = useState("image");
@@ -63,8 +60,6 @@ const HeroSection = () => {
                 borderBottom="2px solid"
                 borderColor={activeTab === "image" ? "#805AD5" : "transparent"}
                 onClick={() => setActiveTab("image")}
-                transition="all 0.3s"
-                _hover={{ color: activeTab === "image" ? "#805AD5" : "white" }}
               >
                 Image to Video
               </Box>
@@ -79,8 +74,6 @@ const HeroSection = () => {
                 borderBottom="2px solid"
                 borderColor={activeTab === "text" ? "#805AD5" : "transparent"}
                 onClick={() => setActiveTab("text")}
-                transition="all 0.3s"
-                _hover={{ color: activeTab === "text" ? "#805AD5" : "white" }}
               >
                 Text to Video
               </Box>
@@ -177,7 +170,7 @@ const HeroSection = () => {
                       Ideas:
                     </Text>
                     <HStack spacing={3} wrap="wrap">
-                      {["Café Vibes", "Gadget Unboxing", "Eco-Friendly Showcase", "Fashion Forward"].map((idea) => (
+                      {promptIdeas.map((idea) => (
                         <Box
                           key={idea}
                           px={4}
@@ -190,7 +183,6 @@ const HeroSection = () => {
                           color="gray.400"
                           cursor="pointer"
                           _hover={{ bg: "whiteAlpha.100", color: "white", borderColor: "#805AD5" }}
-                          transition="0.2s"
                         >
                           {idea}
                         </Box>
@@ -213,17 +205,14 @@ const HeroSection = () => {
                   display="inline-block"
                   role="group"
                   cursor="pointer"
-                  _hover={{ transform: "scale(1.05)" }}
-                  style={{ transition: "all 0.3s" }}
                   _before={{
                     content: '""',
                     position: "absolute",
-                    top: "-150%",
-                    left: "-150%",
-                    right: "-150%",
-                    bottom: "-150%",
-                    background: "conic-gradient(from 0deg, #FF6B6B, #805AD5, #4ECDC4, #FF6B6B)",
-                    animation: `${rotate} 3s linear infinite`,
+                    top: "0",
+                    left: "0",
+                    right: "0",
+                    bottom: "0",
+                    background: "linear-gradient(45deg, #FF6B6B, #805AD5, #4ECDC4, #FF6B6B)",
                   }}
                 >
                   <Button

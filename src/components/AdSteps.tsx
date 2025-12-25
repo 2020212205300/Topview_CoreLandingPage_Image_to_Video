@@ -1,44 +1,45 @@
 import { Box, Container, Heading, Text, Icon, VStack, Badge, Stack, Flex, Center } from "@chakra-ui/react";
 import { ArrowRight, Image as ImageIcon, Film } from "lucide-react";
 
+const scenarios = [
+  {
+    title: "Image Prompt to Video",
+    description: "Describe the motion. Let your image come alive.",
+    input: "A product image + a simple motion prompt: “Add smooth camera movement and premium lighting.”",
+    output: "A realistic, high-fidelity video generated from your image — perfect for concept testing and ads.",
+    accent: "#4ECDC4"
+  },
+  {
+    title: "Photo to Video (Human & Lifestyle Images)",
+    description: "Create natural movement from still photos.",
+    input: "A portrait or lifestyle photo: “A model showcasing a sneaker in a studio setting.”",
+    output: "A smooth, lifelike video with coherent human motion and natural gestures.",
+    accent: "#A78BFA"
+  },
+  {
+    title: "Product Image to Video",
+    description: "Turn product photos into ecommerce-ready videos.",
+    input: "Product images from your store or supplier: “White background product photo.”",
+    output: "A product showcase video highlighting key features — ready for ads and product pages.",
+    accent: "#60A5FA"
+  },
+  {
+    title: "Design / Creative Image to Video",
+    description: "Bring static designs and visuals to life.",
+    input: "A design visual, poster, or brand creative: “Campaign key visual.”",
+    output: "A motion-enhanced video version for social media and digital campaigns.",
+    accent: "#FB923C"
+  },
+  {
+    title: "Image + Sound to Video",
+    description: "Add voice and audio for higher conversion.",
+    input: "An image with a short description: “Product hero image + promotional message.”",
+    output: "A complete marketing video with AI-generated motion and sound — optimized for ads.",
+    accent: "#FF6B6B"
+  }
+];
+
 const AdSteps = () => {
-  const scenarios = [
-    {
-      title: "Image Prompt to Video",
-      description: "Describe the motion. Let your image come alive.",
-      input: "A product image + a simple motion prompt: “Add smooth camera movement and premium lighting.”",
-      output: "A realistic, high-fidelity video generated from your image — perfect for concept testing and ads.",
-      accent: "#4ECDC4"
-    },
-    {
-      title: "Photo to Video (Human & Lifestyle Images)",
-      description: "Create natural movement from still photos.",
-      input: "A portrait or lifestyle photo: “A model showcasing a sneaker in a studio setting.”",
-      output: "A smooth, lifelike video with coherent human motion and natural gestures.",
-      accent: "#A78BFA"
-    },
-    {
-      title: "Product Image to Video",
-      description: "Turn product photos into ecommerce-ready videos.",
-      input: "Product images from your store or supplier: “White background product photo.”",
-      output: "A product showcase video highlighting key features — ready for ads and product pages.",
-      accent: "#60A5FA"
-    },
-    {
-      title: "Design / Creative Image to Video",
-      description: "Bring static designs and visuals to life.",
-      input: "A design visual, poster, or brand creative: “Campaign key visual.”",
-      output: "A motion-enhanced video version for social media and digital campaigns.",
-      accent: "#FB923C"
-    },
-    {
-      title: "Image + Sound to Video",
-      description: "Add voice and audio for higher conversion.",
-      input: "An image with a short description: “Product hero image + promotional message.”",
-      output: "A complete marketing video with AI-generated motion and sound — optimized for ads.",
-      accent: "#FF6B6B"
-    }
-  ];
 
   return (
     <Box as="section" py={{ base: 16, md: 32 }} px="6" bg="black" position="relative" overflow="hidden">

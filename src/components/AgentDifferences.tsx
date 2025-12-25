@@ -82,9 +82,7 @@ const PlatformOptimization = () => {
               }}
               _hover={{
                 borderColor: platform.color,
-                transform: "translateY(-5px)",
               }}
-              transition="0.3s"
             >
               <VStack align="center" spacing={6} position="relative" zIndex="1" h="full" textAlign="center">
                 {/* Icon Box */}

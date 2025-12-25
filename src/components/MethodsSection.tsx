@@ -50,8 +50,7 @@ const MethodsSection = () => {
                 bg="whiteAlpha.50"
                 role="group"
                 cursor="pointer"
-                _hover={{ transform: "translateY(-8px)" }}
-                transition="all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)"
+                _hover={{ bg: "whiteAlpha.100" }}
               >
                 <VStack
                   position="absolute"

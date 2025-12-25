@@ -122,8 +122,7 @@ const AIFeatures = () => {
                       e.stopPropagation();
                       toggleMute(index);
                     }}
-                    _hover={{ bg: "blackAlpha.800", transform: "scale(1.05)" }}
-                    transition="all 0.2s"
+                    _hover={{ bg: "blackAlpha.800" }}
                     zIndex="3"
                     border="1px solid"
                     borderColor="whiteAlpha.200"

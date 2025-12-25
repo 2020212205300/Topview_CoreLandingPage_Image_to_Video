@@ -1,14 +1,15 @@
 import { Box, Container, Flex, Button, Text, HStack, Icon, Link as ChakraLink } from "@chakra-ui/react";
 import { ChevronDown } from "lucide-react";
 
+const navItems = [
+  { label: "Use cases", hasDropdown: true },
+  { label: "AI tools", hasDropdown: true },
+  { label: "Resources", hasDropdown: true },
+  { label: "Ad library", hasDropdown: false },
+  { label: "Pricing", hasDropdown: false },
+];
+
 const Header = () => {
-  const navItems = [
-    { label: "Use cases", hasDropdown: true },
-    { label: "AI tools", hasDropdown: true },
-    { label: "Resources", hasDropdown: true },
-    { label: "Ad library", hasDropdown: false },
-    { label: "Pricing", hasDropdown: false },
-  ];
 
   return (
     <Box

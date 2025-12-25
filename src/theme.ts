@@ -63,8 +63,6 @@ const theme = extendTheme({
                     color: "gray.900", // Dark text for contrast on light button
                     _hover: {
                         bg: "brand.400",
-                        transform: "scale(1.05)",
-                        boxShadow: "0 0 20px rgba(164, 161, 255, 0.4)", // Glow effect
                     },
                     _active: {
                         bg: "brand.600",
