@@ -123,23 +123,6 @@ const MethodsSection = () => {
             <Text color="gray.400" fontSize="lg" fontWeight="medium">
               Simply enter your text. The template handles the structure.
             </Text>
-            <HStack 
-              spacing={2} 
-              color="#A29BFE" 
-              cursor="pointer" 
-              role="group"
-              _hover={{ color: "brand.300" }}
-              transition="0.3s"
-            >
-              <Text fontWeight="bold">Explore All Templates</Text>
-              <Icon 
-                as={ChevronRight} 
-                w={5} 
-                h={5} 
-                _groupHover={{ transform: "translateX(4px)" }}
-                transition="0.3s"
-              />
-            </HStack>
           </VStack>
         </VStack>
       </Container>

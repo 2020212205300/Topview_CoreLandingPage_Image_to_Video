@@ -50,6 +50,10 @@ const CTASection = () => {
           </Box>
 
           <Box
+            as="a"
+            href="https://www.topview.ai/gen/ai-creation?type=aiVideo"
+            target="_blank"
+            rel="noopener noreferrer"
             position="relative"
             display="inline-block"
           >

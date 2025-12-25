@@ -95,6 +95,10 @@ const GeneratorSection = () => {
               </Text>
               
               <Box
+                as="a"
+                href="https://www.topview.ai/gen/ai-creation?type=aiVideo"
+                target="_blank"
+                rel="noopener noreferrer"
                 position="relative"
                 p="3px"
                 borderRadius="full"
