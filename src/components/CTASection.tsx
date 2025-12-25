@@ -36,15 +36,12 @@ const CTASection = () => {
               color="white"
               lineHeight="1.1"
             >
-              Start Turning <Text as="span" bgGradient="linear(to-r, #FF6B6B, #805AD5, #4ECDC4)" bgClip="text">Your Words into Videos</Text>
+              Start Using <Text as="span" bgGradient="linear(to-r, #FF6B6B, #805AD5, #4ECDC4)" bgClip="text">Image to Video AI Today</Text>
             </Heading>
             
             <VStack spacing={4}>
               <Text color="gray.300" fontSize={{ base: "lg", md: "xl" }} fontWeight="medium">
-                The fastest way to create high-converting commercial videos.
-              </Text>
-              <Text color="gray.400" fontSize={{ base: "lg", md: "xl" }}>
-                Join 100,000+ creators turning scripts into viral reality.
+                Turn images into videos that work for marketing, ecommerce, and advertising.
               </Text>
             </VStack>
           </Box>
