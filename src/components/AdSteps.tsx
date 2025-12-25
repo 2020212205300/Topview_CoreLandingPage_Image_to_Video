@@ -1,5 +1,5 @@
-import { Box, Container, Heading, Text, SimpleGrid, Icon, VStack, Badge, Stack, Flex } from "@chakra-ui/react";
-import { ArrowRight } from "lucide-react";
+import { Box, Container, Heading, Text, Icon, VStack, Badge, Stack, Flex, Center } from "@chakra-ui/react";
+import { ArrowRight, Image as ImageIcon, Film } from "lucide-react";
 
 const AdSteps = () => {
   const scenarios = [
@@ -62,9 +62,9 @@ const AdSteps = () => {
           <Box textAlign="center" maxW="4xl" mx="auto">
             <Box>
               <Heading as="h2" size={{ base: "2xl", md: "4xl" }} fontWeight="black" mb="6" color="white" lineHeight="1.1">
-                Turn Any Image into <br />
+                Turn images into <br />
                 <Text as="span" bgGradient="linear(to-r, #FF6B6B, brand.500, #4ECDC4)" bgClip="text">
-                  Engaging Marketing Video Content
+                  viral videos
                 </Text>
               </Heading>
               <Text fontSize="xl" color="gray.300" mb={8} lineHeight="relaxed">
@@ -75,7 +75,7 @@ const AdSteps = () => {
 
           {/* Scenarios Grid */}
           <Flex wrap="wrap" justify="center" gap="10">
-            {scenarios.map((item, index) => (
+            {scenarios.map((item) => (
               <Box
                 key={item.title}
                 w={{ base: "full", md: "calc(50% - 20px)", lg: "calc(33.333% - 27px)" }}
@@ -101,37 +101,45 @@ const AdSteps = () => {
                     </Text>
                   </VStack>
 
-                  <Stack 
-                    direction="column"
-                    spacing={4} 
+                  <Box 
                     w="full" 
-                    bg="blackAlpha.400" 
-                    p={5} 
+                    bg="whiteAlpha.50" 
                     borderRadius="2xl"
                     border="1px solid"
                     borderColor="whiteAlpha.100"
-                    align="center"
+                    aspectRatio="16/9"
+                    position="relative"
+                    overflow="hidden"
+                    role="group"
                   >
-                    {/* Input Side */}
-                    <VStack align="start" spacing={1} w="full">
-                      <Badge variant="subtle" colorScheme="gray" fontSize="xs" mb={1}>INPUT</Badge>
-                      <Text color="whiteAlpha.900" fontWeight="medium" fontSize="sm">
-                        {item.input}
-                      </Text>
-                    </VStack>
-
-                    <Box color="whiteAlpha.400">
-                      <Icon as={ArrowRight} w={5} h={5} transform="rotate(90deg)" />
-                    </Box>
-
-                    {/* Output Side */}
-                    <VStack align="start" spacing={1} w="full">
-                      <Badge variant="subtle" colorScheme="green" fontSize="xs" mb={1}>OUTPUT</Badge>
-                      <Text color={item.accent} fontWeight="bold" fontSize="sm">
-                        {item.output}
-                      </Text>
-                    </VStack>
-                  </Stack>
+                    <Center h="full" w="full">
+                      <VStack spacing={3}>
+                        <Box 
+                          p={4} 
+                          borderRadius="full" 
+                          bg="whiteAlpha.100" 
+                          border="1px solid" 
+                          borderColor="whiteAlpha.200"
+                        >
+                          <Icon as={Film} w={8} h={8} color={item.accent} />
+                        </Box>
+                        <Text fontSize="xs" color="gray.500" fontWeight="bold" textTransform="uppercase" letterSpacing="widest">
+                          Preview Coming Soon
+                        </Text>
+                      </VStack>
+                    </Center>
+                    
+                    {/* Decorative Overlay */}
+                    <Box 
+                      position="absolute" 
+                      top={0} 
+                      left={0} 
+                      right={0} 
+                      bottom={0} 
+                      bgGradient={`linear(to-br, ${item.accent}05, transparent)`} 
+                      pointerEvents="none"
+                    />
+                  </Box>
                 </VStack>
               </Box>
             ))}

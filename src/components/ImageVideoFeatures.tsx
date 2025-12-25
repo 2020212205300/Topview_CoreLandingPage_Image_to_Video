@@ -13,10 +13,11 @@ const ImageVideoFeatures = () => {
             color="white"
             fontWeight="black"
             lineHeight="1.1"
+            mb="6"
           >
-            Image to Video Features <br />
-            <Text as="span" bgGradient="linear(to-r, #FF6B6B, #805AD5, #4ECDC4)" bgClip="text">
-              Optimized for Marketing
+            Image to Video AI <br />
+            <Text as="span" bgGradient="linear(to-r, #FF6B6B, brand.500, #4ECDC4)" bgClip="text">
+              Features for Marketing
             </Text>
           </Heading>
           <Text color="gray.400" fontSize="xl" fontWeight="medium">

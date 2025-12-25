@@ -50,14 +50,14 @@ const FAQSection = () => {
               mb="4"
               overflow="hidden"
             >
-              <h2>
+              <h3>
                 <AccordionButton py="6" _hover={{ bg: "whiteAlpha.100" }}>
                   <Box flex="1" textAlign="left" fontWeight="medium" color="white">
                     {faq.question}
                   </Box>
                   <AccordionIcon color="gray.400" />
                 </AccordionButton>
-              </h2>
+              </h3>
               <AccordionPanel pb="6" color="gray.400">
                 {faq.answer}
               </AccordionPanel>

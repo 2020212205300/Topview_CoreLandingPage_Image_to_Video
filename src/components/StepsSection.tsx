@@ -23,12 +23,11 @@ const StepsSection = () => {
     <Box as="section" py={{ base: 16, md: 24 }} px="6" bg="black" position="relative">
       <Container maxW="container.xl">
         <VStack spacing={4} textAlign="center" mb={16}>
-          <Heading as="h2" size={{ base: "2xl", md: "4xl" }} fontWeight="black" color="white" lineHeight="shorter">
-            How to Convert{" "}
-            <Text as="span" bgGradient="linear(to-r, #FF6B6B, #805AD5, #4ECDC4)" bgClip="text">
-              Image to Video
-            </Text>{" "}
-            in 3 Steps
+          <Heading as="h2" size={{ base: "2xl", md: "4xl" }} fontWeight="black" mb="6" color="white" lineHeight="1.1">
+            Image to Video <br />
+            <Text as="span" bgGradient="linear(to-r, #FF6B6B, brand.500, #4ECDC4)" bgClip="text">
+              in 3 Steps
+            </Text>
           </Heading>
           <Text fontSize="lg" color="gray.500" maxW="2xl">
             Go from blank page to published video in under 5 minutes.
@@ -61,7 +60,7 @@ const StepsSection = () => {
                 >
                   {step.number}
                 </Text>
-                <Heading size="lg" color="white" fontWeight="bold">
+                <Heading as="h3" size="lg" color="white" fontWeight="bold">
                   {step.title}
                 </Heading>
                 <Text color="gray.500" fontSize="md" lineHeight="tall">

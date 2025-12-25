@@ -52,7 +52,7 @@ const AIFeatures = () => {
         <Box textAlign="center" mb="16">
           <Box>
             <Heading as="h2" size={{ base: "2xl", md: "4xl" }} fontWeight="black" mb="4" color="white">
-              From Simple Image to <Text as="span" bgGradient="linear(to-r, #FF6B6B, brand.500, #4ECDC4)" bgClip="text">Full Video Production</Text>
+              Image to Video <Text as="span" bgGradient="linear(to-r, #FF6B6B, brand.500, #4ECDC4)" bgClip="text">AI Examples</Text>
             </Heading>
           </Box>
         </Box>
@@ -142,7 +142,7 @@ const AIFeatures = () => {
                 </Box>
                 
                 <VStack align="start" spacing="2">
-                  <Heading size="md" color="white" fontWeight="bold">
+                  <Heading as="h3" size="md" color="white" fontWeight="bold">
                     {type.title}
                   </Heading>
                   <Text fontSize="sm" color="gray.400" lineHeight="tall">

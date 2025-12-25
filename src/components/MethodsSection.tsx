@@ -1,12 +1,4 @@
-import { Box, Container, Heading, Text, VStack, SimpleGrid, Icon, HStack } from "@chakra-ui/react";
-import { Rocket, Users, ShoppingBag, BarChart3, ChevronRight } from "lucide-react";
-
-const templateLabels = [
-  { title: "Viral Video", icon: Rocket, color: "#FF6B6B" },
-  { title: "UGC Video", icon: Users, color: "#4ECDC4" },
-  { title: "Shoppable Video", icon: ShoppingBag, color: "#805AD5" },
-  { title: "Ads Video", icon: BarChart3, color: "#3182CE" }
-];
+import { Box, Container, Heading, Text, VStack, SimpleGrid } from "@chakra-ui/react";
 
 const templateImages = [
   { 
@@ -45,32 +37,6 @@ const MethodsSection = () => {
               Topview includes ready-to-use image to video templates based on real high-performing content.
             </Text>
           </Box>
-
-          {/* Labels Section */}
-          <SimpleGrid columns={{ base: 1, sm: 2, lg: 4 }} spacing={6} w="full">
-            {templateLabels.map((label) => (
-              <Box
-                key={label.title}
-                bg="whiteAlpha.50"
-                px={6}
-                py={4}
-                borderRadius="xl"
-                border="1px solid"
-                borderColor="whiteAlpha.100"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                gap={3}
-                _hover={{ bg: "whiteAlpha.100", borderColor: label.color }}
-                transition="all 0.3s"
-              >
-                <Icon as={label.icon} w={4} h={4} color={label.color} />
-                <Text color="whiteAlpha.800" fontSize="sm" fontWeight="medium">
-                  {label.title}
-                </Text>
-              </Box>
-            ))}
-          </SimpleGrid>
 
           {/* Images Grid */}
           <SimpleGrid columns={{ base: 2, md: 3, lg: 6 }} spacing={6} w="full" pt={8}>
