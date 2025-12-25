@@ -96,7 +96,7 @@ const GeneratorSection = () => {
               
               <Box
                 position="relative"
-                p="1.5px"
+                p="3px"
                 borderRadius="full"
                 overflow="hidden"
                 display="inline-block"
@@ -107,11 +107,12 @@ const GeneratorSection = () => {
                 _before={{
                   content: '""',
                   position: "absolute",
-                  top: "0",
-                  left: "0",
-                  right: "0",
-                  bottom: "0",
-                  background: "linear-gradient(to-r, #4ECDC4, #FF6B6B, #805AD5)",
+                  top: "-150%",
+                  left: "-150%",
+                  right: "-150%",
+                  bottom: "-150%",
+                  background: "conic-gradient(from 0deg, #FF6B6B, #805AD5, #4ECDC4, #FF6B6B)",
+                  animation: `${rotate} 3s linear infinite`,
                 }}
               >
                 <Button

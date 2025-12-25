@@ -1,5 +1,11 @@
 import { Box, Container, Heading, Text, Flex, Button, Icon, Textarea, VStack, HStack, Center } from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
 import { Sparkles, Upload } from "lucide-react";
+
+const rotate = keyframes`
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+`;
 import { useState } from "react";
 
 const HeroSection = () => {
@@ -166,7 +172,7 @@ const HeroSection = () => {
               <Flex w="full" justifyContent="center" pt={4}>
                 <Box
                   position="relative"
-                  p="1.5px"
+                  p="3px"
                   borderRadius="full"
                   overflow="hidden"
                   display="inline-block"
@@ -179,9 +185,10 @@ const HeroSection = () => {
                     position: "absolute",
                     top: "-150%",
                     left: "-150%",
-                    width: "400%",
-                    height: "400%",
-                    background: "conic-gradient(from 0deg, transparent 0 15%, #FF6B6B 20%, #4ECDC4 30%, transparent 35% 65%, #A29BFE 70%, #4ECDC4 80%, transparent 85% 100%)",
+                    right: "-150%",
+                    bottom: "-150%",
+                    background: "conic-gradient(from 0deg, #FF6B6B, #805AD5, #4ECDC4, #FF6B6B)",
+                    animation: `${rotate} 3s linear infinite`,
                   }}
                 >
                   <Button
