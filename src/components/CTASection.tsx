@@ -94,7 +94,7 @@ const CTASection = () => {
                 _active={{ bg: "black" }}
                 letterSpacing="-0.02em"
               >
-                Create Video with AI Now
+                Turn Image to Video Now
               </Button>
             </Box>
           </Box>

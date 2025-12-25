@@ -36,13 +36,13 @@ const MethodsSection = () => {
         <VStack spacing={12} align="center" textAlign="center">
           <Box maxW="4xl">
             <Heading as="h2" size={{ base: "2xl", md: "4xl" }} fontWeight="black" mb="6" color="white" lineHeight="1.1">
-              Viral <Text as="span" bgGradient="linear(to-r, #FF6B6B, #805AD5, #4ECDC4)" bgClip="text">Text to Video</Text> Templates
+              Viral <Text as="span" bgGradient="linear(to-r, #FF6B6B, #805AD5, #4ECDC4)" bgClip="text">Image to Video</Text> Templates
             </Heading>
             <Heading as="h3" size="lg" color="whiteAlpha.900" mb={6} fontWeight="bold">
               Pre-Built Templates Based on Proven Video Formats
             </Heading>
             <Text fontSize={{ base: "lg", md: "xl" }} color="gray.400" maxW="3xl" mx="auto">
-              Topview includes ready-to-use text to video templates based on real high-performing content.
+              Topview includes ready-to-use image to video templates based on real high-performing content.
             </Text>
           </Box>
 
@@ -121,7 +121,7 @@ const MethodsSection = () => {
 
           <VStack spacing={6} pt={8}>
             <Text color="gray.400" fontSize="lg" fontWeight="medium">
-              Simply enter your text. The template handles the structure.
+              Simply upload your image. The template handles the structure.
             </Text>
           </VStack>
         </VStack>

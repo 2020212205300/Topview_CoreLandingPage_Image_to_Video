@@ -30,7 +30,10 @@ const GeneratorSection = () => {
               fontWeight="black"
               lineHeight="1.1"
             >
-              All-in-One <Text as="span" bgGradient="linear(to-r, #FF6B6B, brand.500, #4ECDC4)" bgClip="text">Text to Video</Text> Using the Best AI Video Models
+              One-Stop <Text as="span" bgGradient="linear(to-r, #FF6B6B, brand.500, #4ECDC4)" bgClip="text">Image to Video</Text> Platform
+            </Heading>
+            <Heading as="h3" size="lg" color="whiteAlpha.900" fontWeight="bold">
+              The Most Advanced AI Video Models, Working Together
             </Heading>
             <Text 
               color="gray.400" 
@@ -38,7 +41,8 @@ const GeneratorSection = () => {
               lineHeight="tall"
               fontWeight="medium"
             >
-              Topview is not limited to a single AI engine. We integrate multiple state-of-the-art AI video models, allowing you to generate higher-quality videos for different use cases.
+              Topview brings the latest and most powerful AI video models into one unified image-to-video workflow. 
+              Instead of testing tools one by one, you get the best model for image animation — automatically.
             </Text>
           </VStack>
 
@@ -64,6 +68,10 @@ const GeneratorSection = () => {
               pointerEvents: "none",
             }}
           >
+            <Text color="brand.400" fontWeight="bold" mb={10} fontSize="lg" textTransform="uppercase" letterSpacing="widest">
+              Integrated AI Video Models:
+            </Text>
+
             <SimpleGrid columns={{ base: 2, sm: 3, md: 3, lg: 3 }} spacing={{ base: 6, md: 10 }}>
               {aiModels.map((model, index) => (
                 <Box
@@ -90,9 +98,14 @@ const GeneratorSection = () => {
             </SimpleGrid>
 
             <VStack spacing={6} mt={16}>
-              <Text color="gray.500" fontSize="md" fontWeight="medium" maxW="2xl">
-                This means better motion, better realism, and better results for marketing and ecommerce videos. One platform. Multiple AI models. One text input.
-              </Text>
+              <VStack spacing={2}>
+                <Text color="white" fontSize="xl" fontWeight="black">
+                  One platform. One workflow.
+                </Text>
+                <Text color="gray.500" fontSize="md" fontWeight="medium">
+                  Multiple state-of-the-art models behind every video.
+                </Text>
+              </VStack>
               
               <Box
                 as="a"
@@ -134,7 +147,7 @@ const GeneratorSection = () => {
                   zIndex="1"
                   rightIcon={<Icon as={ChevronRight} size={20} color="#A29BFE" />}
                 >
-                  Create Video with AI Now
+                  Turn Image to Video Now
                 </Button>
               </Box>
             </VStack>

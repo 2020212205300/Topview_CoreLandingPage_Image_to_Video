@@ -35,13 +35,13 @@ const PlatformOptimization = () => {
               <Text as="span" bgGradient="linear(to-r, #FF6B6B, #805AD5, #4ECDC4)" bgClip="text">
                 Platform-Optimized
               </Text>{" "}
-              Text to Video Output
+              Image to Video Output
             </Heading>
             <Heading as="h3" size="lg" color="whiteAlpha.900" mb="6" fontWeight="bold">
               Create Videos for Every Major Video Platform
             </Heading>
             <Text fontSize="lg" color="gray.500" mb={8}>
-              Topview automatically adapts your text to video output to match platform requirements and content styles.
+              Topview automatically adapts your image to video output to match platform requirements and content styles.
             </Text>
             
             <Badge 

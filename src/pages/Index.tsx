@@ -7,6 +7,7 @@ import PlatformOptimization from "@/components/AgentDifferences";
 import AgentCapabilities from "@/components/AgentCapabilities";
 import GeneratorSection from "@/components/GeneratorSection";
 import MethodsSection from "@/components/MethodsSection";
+import ImageVideoFeatures from "@/components/ImageVideoFeatures";
 import AdSteps from "@/components/AdSteps";
 import StepsSection from "@/components/StepsSection";
 import CTASection from "@/components/CTASection";
@@ -23,6 +24,7 @@ const Index = () => {
         <AIFeatures />
         <GeneratorSection />
         <MethodsSection />
+        <ImageVideoFeatures />
         <AdSteps />
         <PlatformOptimization />
         <AgentCapabilities />

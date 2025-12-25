@@ -1,5 +1,5 @@
-import { Box, Container, Heading, Text, SimpleGrid, Flex, Icon, VStack, IconButton, useToast } from "@chakra-ui/react";
-import { Play, Volume2, VolumeX, Copy } from "lucide-react";
+import { Box, Container, Heading, Text, SimpleGrid, Flex, Icon, VStack } from "@chakra-ui/react";
+import { Volume2, VolumeX } from "lucide-react";
 import { useState } from "react";
 
 const videoTypes = [
@@ -39,24 +39,11 @@ const videoTypes = [
 
 const AIFeatures = () => {
   const [mutedStates, setMutedStates] = useState(new Array(videoTypes.length).fill(true));
-  const toast = useToast();
 
   const toggleMute = (index: number) => {
     const newStates = [...mutedStates];
     newStates[index] = !newStates[index];
     setMutedStates(newStates);
-  };
-
-  const handleCopy = (text: string) => {
-    navigator.clipboard.writeText(text);
-    toast({
-      title: "Full Prompt copied!",
-      description: "The complete cinematic prompt is ready to use.",
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-      position: "top",
-    });
   };
 
   return (
@@ -65,7 +52,7 @@ const AIFeatures = () => {
         <Box textAlign="center" mb="16">
           <Box>
             <Heading as="h2" size={{ base: "2xl", md: "4xl" }} fontWeight="black" mb="4" color="white">
-              From Simple Text to <Text as="span" bgGradient="linear(to-r, #FF6B6B, brand.500, #4ECDC4)" bgClip="text">Full Video Production</Text>
+              From Simple Image to <Text as="span" bgGradient="linear(to-r, #FF6B6B, brand.500, #4ECDC4)" bgClip="text">Full Video Production</Text>
             </Heading>
           </Box>
         </Box>
@@ -119,57 +106,6 @@ const AIFeatures = () => {
                     }}
                   />
                   
-                  {/* Prompt Overlay on Hover */}
-                  <Box
-                    position="absolute"
-                    top="0"
-                    left="0"
-                    right="0"
-                    bottom="0"
-                    bg="blackAlpha.800"
-                    backdropFilter="blur(8px)"
-                    p="6"
-                    display="flex"
-                    flexDirection="column"
-                    justifyContent="center"
-                    opacity="0"
-                    _groupHover={{ opacity: 1 }}
-                    transition="0.3s"
-                    zIndex="2"
-                    style={{ borderRadius: "inherit" }}
-                  >
-                    <VStack align="start" spacing={3} h="full" justify="center">
-                      <Flex align="center" justify="space-between" w="full" mb={1}>
-                        <Flex align="center" gap={2}>
-                          <Icon as={Play} w={4} h={4} color={type.borderColor} />
-                          <Text color={type.borderColor} fontSize="xs" fontWeight="black" textTransform="uppercase" letterSpacing="wider">
-                            Prompt
-                          </Text>
-                        </Flex>
-                        <IconButton
-                          aria-label="Copy prompt"
-                          icon={<Icon as={Copy} w={3.5} h={3.5} />}
-                          size="xs"
-                          variant="ghost"
-                          color="whiteAlpha.600"
-                          _hover={{ color: "white", bg: "whiteAlpha.200" }}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleCopy(type.fullPrompt);
-                          }}
-                        />
-                      </Flex>
-                      <Box w="full">
-                        <Text color="white" fontSize="sm" lineHeight="tall" fontWeight="medium" fontStyle="italic">
-                          "{type.displayPrompt}"
-                        </Text>
-                        <Text color="whiteAlpha.500" fontSize="10px" mt={3} fontWeight="bold" textTransform="uppercase">
-                          Click copy icon for full prompt
-                        </Text>
-                      </Box>
-                    </VStack>
-                  </Box>
-
                   {/* Sound Toggle Button */}
                   <Flex
                     position="absolute"

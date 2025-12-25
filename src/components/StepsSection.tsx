@@ -3,18 +3,18 @@ import { Box, Container, Heading, Text, SimpleGrid, VStack, Badge } from "@chakr
 const steps = [
   {
     number: "STEP 1",
-    title: "Input Your Text",
-    description: "Paste your script, enter a prompt, or upload a document.",
+    title: "Upload Your Image",
+    description: "Upload your product photo, brand asset, or any high-quality image.",
   },
   {
     number: "STEP 2",
     title: "AI Visualization",
-    description: "The Agent generates a storyboard, selects AI avatars, and matches stock or AI footage to your words.",
+    description: "The Agent analyzes your image and describes how you want it to move or animate.",
   },
   {
     number: "STEP 3",
     title: "Edit & Export",
-    description: "Tweak the script to update visuals instantly, then export in 9:16 or 16:9 format.",
+    description: "Preview the animation, tweak the prompt if needed, then export in 9:16 or 16:9 format.",
   },
 ];
 
@@ -26,7 +26,7 @@ const StepsSection = () => {
           <Heading as="h2" size={{ base: "2xl", md: "4xl" }} fontWeight="black" color="white" lineHeight="shorter">
             How to Convert{" "}
             <Text as="span" bgGradient="linear(to-r, #FF6B6B, #805AD5, #4ECDC4)" bgClip="text">
-              Text to Video
+              Image to Video
             </Text>{" "}
             in 3 Steps
           </Heading>
