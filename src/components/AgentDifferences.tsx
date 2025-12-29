@@ -1,25 +1,28 @@
 import { Box, Container, Heading, Text, SimpleGrid, VStack, HStack, Badge, Image } from "@chakra-ui/react";
 import { CheckCircle2 } from "lucide-react";
+import tiktokIcon from "../../public/tiktok.svg";
+import instagramIcon from "../../public/Instagram.png";
+import youtubeIcon from "../../public/youtube.svg";
 
 const platforms = [
   {
     name: "TikTok",
     description: "Vertical, fast-paced, trend-driven videos",
-    icon: "/tiktok.svg",
+    icon: tiktokIcon,
     color: "#00f2ea",
     bg: "rgba(0, 242, 234, 0.05)"
   },
   {
     name: "Instagram Reels",
     description: "Clean, branded short-form videos",
-    icon: "/Instagram.png",
+    icon: instagramIcon,
     color: "#E1306C",
     bg: "rgba(225, 48, 108, 0.05)"
   },
   {
     name: "YouTube",
     description: "Shorts and long-form marketing videos",
-    icon: "/youtube.svg",
+    icon: youtubeIcon,
     color: "#FF0000",
     bg: "rgba(255, 0, 0, 0.05)"
   }

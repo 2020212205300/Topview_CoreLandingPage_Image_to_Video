@@ -1,13 +1,19 @@
 import { Box, Container, Heading, Text, VStack, HStack, Icon, SimpleGrid, Badge, Flex, Image, Button } from "@chakra-ui/react";
 import { Info, Sparkles, ChevronRight } from "lucide-react";
+import soraIcon from "../../public/Sora.svg";
+import geminiIcon from "../../public/gemini-sparkle.svg";
+import seedanceIcon from "../../public/seedance.svg";
+import klingIcon from "../../public/kling.svg";
+import wanIcon from "../../public/wan.svg";
+import viduIcon from "../../public/vidu.svg";
 
 const aiModels = [
-  { name: "Sora", icon: "/Sora.svg" },
-  { name: "Veo", icon: "/gemini-sparkle.svg" },
-  { name: "Seedance", icon: "/seedance.svg" },
-  { name: "Kling", icon: "/kling.svg" },
-  { name: "Wan", icon: "/wan.svg" },
-  { name: "Vidu", icon: "/vidu.svg" },
+  { name: "Sora", icon: soraIcon },
+  { name: "Veo", icon: geminiIcon },
+  { name: "Seedance", icon: seedanceIcon },
+  { name: "Kling", icon: klingIcon },
+  { name: "Wan", icon: wanIcon },
+  { name: "Vidu", icon: viduIcon },
 ];
 
 const GeneratorSection = () => {
