@@ -1,23 +1,41 @@
-import { Box, Container, Heading, Text, VStack, SimpleGrid } from "@chakra-ui/react";
+import { Box, Container, Heading, Text, VStack, SimpleGrid, Image, Link, Button } from "@chakra-ui/react";
+import viralMarketingImg from "../../public/Viral Marketing.png";
+import ugcImg from "../../public/UGC.png";
+import productDemosImg from "../../public/Product Demos.png";
+import socialGrowthImg from "../../public/Social Growth.png";
+import brandImg from "../../public/Brand.png";
+import viralShotsImg from "../../public/Viral Shots.png";
 
 const templateImages = [
   { 
-    label: "Viral Marketing"
+    label: "Viral Marketing",
+    image: viralMarketingImg,
+    link: "https://agent.topview.ai/agent-share?sessionId=25324874e6f643b6a74ec23890d000a4"
   },
   { 
-    label: "UGC Creators"
+    label: "UGC Creators",
+    image: ugcImg,
+    link: "https://agent.topview.ai/agent-share?sessionId=3908ce6f91774719a2cd88a3409957f3"
   },
   { 
-    label: "Product Demos"
+    label: "Product Demos",
+    image: productDemosImg,
+    link: "https://agent.topview.ai/agent-share?sessionId=3d3519a778f94b148c58274462e1d022"
   },
   { 
-    label: "Social Growth"
+    label: "Social Growth",
+    image: socialGrowthImg,
+    link: "https://agent.topview.ai/agent-share?sessionId=3314a103f7684cf39f0c6457d128d8c0"
   },
   { 
-    label: "Brand Stories"
+    label: "Brand Stories",
+    image: brandImg,
+    link: "https://agent.topview.ai/agent-share?sessionId=247554b461524bbba7c538fb35e2039c"
   },
   { 
-    label: "Viral Shorts"
+    label: "Viral Shorts",
+    image: viralShotsImg,
+    link: "https://agent.topview.ai/agent-share?sessionId=32ff37b16f9e48f386fd19f7d45ed1d1"
   }
 ];
 
@@ -41,46 +59,75 @@ const MethodsSection = () => {
           {/* Images Grid */}
           <SimpleGrid columns={{ base: 2, md: 3, lg: 6 }} spacing={6} w="full" pt={8}>
             {templateImages.map((img, index) => (
-              <Box
-                key={index}
-                position="relative"
-                borderRadius="2xl"
-                overflow="hidden"
-                aspectRatio="9/16"
-                bg="whiteAlpha.50"
-                role="group"
-                cursor="pointer"
-                _hover={{ bg: "whiteAlpha.100" }}
-              >
-                <VStack
-                  position="absolute"
-                  bottom="5"
-                  left="0"
-                  right="0"
-                  spacing={1}
-                  zIndex="2"
-                  px={2}
+              <VStack key={index} spacing={4}>
+                <Box
+                  position="relative"
+                  borderRadius="2xl"
+                  overflow="hidden"
+                  aspectRatio="9/16"
+                  bg="whiteAlpha.50"
+                  w="full"
                 >
-                  <Text
+                  <Image 
+                    src={img.image}
+                    alt={img.label}
+                    w="full"
+                    h="full"
+                    objectFit="cover"
+                  />
+                  
+                  {/* Overlay for better text readability */}
+                  <Box
+                    position="absolute"
+                    inset="0"
+                    bgGradient="linear(to-t, blackAlpha.900, transparent, transparent)"
+                    zIndex="1"
+                  />
+
+                  <VStack
+                    position="absolute"
+                    bottom="5"
+                    left="0"
+                    right="0"
+                    spacing={1}
+                    zIndex="2"
+                    px={2}
+                  >
+                    <Text
+                      color="white"
+                      fontSize="xs"
+                      fontWeight="black"
+                      textTransform="uppercase"
+                      letterSpacing="tighter"
+                      opacity="0.7"
+                    >
+                      Template
+                    </Text>
+                    <Text
+                      color="white"
+                      fontSize="sm"
+                      fontWeight="bold"
+                      lineHeight="shorter"
+                    >
+                      {img.label}
+                    </Text>
+                  </VStack>
+                </Box>
+                <Link href={img.link} isExternal w="full">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    colorScheme="whiteAlpha"
                     color="white"
+                    w="full"
+                    borderRadius="full"
                     fontSize="xs"
-                    fontWeight="black"
-                    textTransform="uppercase"
-                    letterSpacing="tighter"
-                    opacity="0.7"
+                    _hover={{ bg: "whiteAlpha.200" }}
                   >
-                    Template
-                  </Text>
-                  <Text
-                    color="white"
-                    fontSize="sm"
-                    fontWeight="bold"
-                    lineHeight="shorter"
-                  >
-                    {img.label}
-                  </Text>
-                </VStack>
-              </Box>
+                    Try it now
+                  </Button>
+                </Link>
+              </VStack>
             ))}
           </SimpleGrid>
 
