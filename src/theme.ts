@@ -12,7 +12,7 @@ const theme = extendTheme({
             body: {
                 bg: "black",
                 color: "white",
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Outfit', sans-serif",
             },
         },
     },
@@ -43,8 +43,8 @@ const theme = extendTheme({
         },
     },
     fonts: {
-        heading: "'Inter', sans-serif",
-        body: "'Inter', sans-serif",
+        heading: "'Outfit', sans-serif",
+        body: "'Outfit', sans-serif",
     },
     components: {
         Heading: {
